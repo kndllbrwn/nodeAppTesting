@@ -10,13 +10,23 @@ it('should add two numbers', () => {
     // }
 });
 
-it('should square a number', () => {
-    var res = utils.square(2);
-    expect(res).toBe(4).toBeA('number');
+it('should asynch add two numbers', (done) => {
+    var res = utils.asynchAdd(1,2, (sum) => {
+        expect(sum).toBe(3).toBeA('number');
+        done();
+    });
+    
+})
+
+it('should square a number', (done) => {
+    var res = utils.square(2, (product) =>{
+    expect(product).toBe(4).toBeA('number');
+    done();
     // {
     //     throw new Error(`Expected 4, but got ${res}`)
     // }
 });
+})
 
 it('should verify first and last names are set', () => {
     var res = utils.setName({age:29, occupation:"Developer"}, "Ken Brown");
