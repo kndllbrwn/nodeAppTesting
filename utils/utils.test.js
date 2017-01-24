@@ -1,14 +1,17 @@
 const expect = require('expect');
 const utils = require('./utils');
 
-it('should add two numbers', () => {
-    
-    var res = utils.add(33,11);
-    expect(res).toBe(44).toBeA('number');
-    // if (res !== 44){
-    //     throw new Error(`Expected 44, but got ${res}`)
-    // }
-});
+describe('Utils', () => {
+    describe('#add', () => {
+        it('should add two numbers', () => {
+        
+        var res = utils.add(33,11);
+        expect(res).toBe(44).toBeA('number');
+        // if (res !== 44){
+        //     throw new Error(`Expected 44, but got ${res}`)
+        // }
+        });
+    });
 
 it('should asynch add two numbers', (done) => {
     var res = utils.asynchAdd(1,2, (sum) => {
@@ -27,6 +30,10 @@ it('should square a number', (done) => {
     // }
 });
 })
+
+});
+
+
 
 it('should verify first and last names are set', () => {
     var res = utils.setName({age:29, occupation:"Developer"}, "Ken Brown");
